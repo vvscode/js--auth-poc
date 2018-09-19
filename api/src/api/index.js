@@ -7,10 +7,11 @@ const app = express();
 
 app.get('/api', function (req, res) {
   res.json({
-    data: "data"
+    status: "success",
+    data: "data from api"
   });
 });
 
-app.listen(process.env.PORT, function () {
-  console.log('API started on port ', process.env.PORT);
+app.listen(process.env.PORT_API, function () {
+  console.log('API started on port', process.env.PORT_API);
 });

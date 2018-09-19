@@ -21,8 +21,5 @@ app.use(require('./middlewares/validationError'));
 app.use(require('./middlewares/internalServerError'));
 
 app.listen(process.env.APP_PORT || DEFAULT_APP_PORT, data =>
-  console.debug(
-    `Auth started at http://0.0.0.0:${process.env.APP_PORT ||
-      DEFAULT_APP_PORT}`,
-  ),
+  console.debug('AUTH started on port', process.env.APP_PORT || DEFAULT_APP_PORT)
 );

@@ -18,7 +18,7 @@ module.exports = {
           });
         }
 
-        axios.post(`http://localhost:${process.env.PORT_AUTH}/checkJWT`, { jwt: token })
+        axios.post(`http://localhost:${process.env.PORT_AUTH}/auth/checkJWT`, { jwt: token })
           .then(function (res) {
             const data = res.data.data;
 

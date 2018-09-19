@@ -3,11 +3,11 @@ const http = require('http');
 
 const APP_PORT = 1111;
 const appId = 'appClient123';
-const authMsUrl = 'http://0.0.0.0:8082';
+const authMsUrl = 'http://0.0.0.0:8081';
 
 module.exports = (...params) => {
   Promise.all([
-    fetch(`${authMsUrl}/requestToken`, {
+    fetch(`${authMsUrl}/auth/requestToken`, {
       method: 'POST',
       headers: {
         Accept: 'application/json',

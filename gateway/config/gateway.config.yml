@@ -1,15 +1,33 @@
 http:
   port: ${PORT:-8080}
 apiEndpoints:
+  auth:
+    host: localhost
+    paths: '/auth/*'
   api:
     host: localhost
+    paths: ['/api', '/api/*']
+  api1:
+    host: localhost
+    paths: ['/api1', '/api1/*']
 serviceEndpoints:
+  auth:
+    url: 'http://localhost:${PORT_AUTH:-8081}'
   api:
-    url: 'http://localhost:${PORT_API:-8081}'
+    url: 'http://localhost:${PORT_API:-8082}'
+  api1:
+    url: 'http://localhost:${PORT_API1:-8083}'
 policies:
   - auth
   - proxy
 pipelines:
+  auth:
+    apiEndpoints:
+      - auth
+    policies:
+      - proxy:
+        - action:
+            serviceEndpoint: auth
   api:
     apiEndpoints:
       - api
@@ -20,3 +38,13 @@ pipelines:
       - proxy:
         - action:
             serviceEndpoint: api
+  api1:
+    apiEndpoints:
+      - api1
+    policies:
+      - auth:
+        - action:
+            service: 'api1'
+      - proxy:
+        - action:
+            serviceEndpoint: api1

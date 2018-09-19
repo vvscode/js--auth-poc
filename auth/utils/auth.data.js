@@ -8,17 +8,17 @@ module.exports = {
     {
       appId: 'jt1',
       callbackUrl: 'https://postman-echo.com/post',
-      scope: ['api', 'api1'],
+      scope: ['api'],
     },
     {
       appId: 'jt2',
       callbackUrl: 'https://postman-echo.com/post',
-      scope: ['api2'],
+      scope: ['api1'],
     },
     {
       appId: 'jt3',
       callbackUrl: 'https://postman-echo.com/post',
-      scope: ['api3'],
+      scope: ['api', 'api1'],
     },
   ],
 };

@@ -6,8 +6,8 @@ const notFound = require('./notFound');
 
 const router = Router();
 
-router.post('/checkJWT', checkJWT);
-router.post('/requestToken', requestToken);
+router.post('/auth/checkJWT', checkJWT);
+router.post('/auth/requestToken', requestToken);
 router.get('*', notFound);
 
 module.exports = router;
