@@ -4,19 +4,19 @@ apiEndpoints:
   auth:
     host: localhost
     paths: '/auth/*'
-  api:
+  apiA:
     host: localhost
-    paths: ['/api', '/api/*']
-  api1:
+    paths: ['/apiA', '/apiA/*']
+  apiB:
     host: localhost
-    paths: ['/api1', '/api1/*']
+    paths: ['/apiB', '/apiB/*']
 serviceEndpoints:
   auth:
     url: 'http://localhost:${PORT_AUTH:-8081}'
-  api:
-    url: 'http://localhost:${PORT_API:-8082}'
-  api1:
-    url: 'http://localhost:${PORT_API1:-8083}'
+  apiA:
+    url: 'http://localhost:${PORT_API_A:-8082}'
+  apiB:
+    url: 'http://localhost:${PORT_API_B:-8083}'
 policies:
   - auth
   - proxy
@@ -28,23 +28,23 @@ pipelines:
       - proxy:
         - action:
             serviceEndpoint: auth
-  api:
+  apiA:
     apiEndpoints:
-      - api
+      - apiA
     policies:
       - auth:
         - action:
-            service: 'api'
+            service: 'apiA'
       - proxy:
         - action:
-            serviceEndpoint: api
-  api1:
+            serviceEndpoint: apiA
+  apiB:
     apiEndpoints:
-      - api1
+      - apiB
     policies:
       - auth:
         - action:
-            service: 'api1'
+            service: 'apiB'
       - proxy:
         - action:
-            serviceEndpoint: api1
+            serviceEndpoint: apiB

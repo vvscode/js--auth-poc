@@ -1,18 +1,13 @@
-const COMMANDS = {
-  fetchJWT: require('./commands/fetchJWT'),
-  requestToApiGateway: require('./commands/requestToApiGateway'),
-};
+require('dotenv').config();
 
-let [_interpreter, _script, command, ...params] = process.argv;
+const express = require('express');
+const app = express();
+const serveStatic = require('serve-static');
+const routes = require('./src/routes');
+const port = process.env.PORT;
 
-if (!command) {
-  console.log(`pass command (${Object.keys(COMMANDS).join('|')})`);
-} else if (!(command in COMMANDS)) {
-  console.log(`Unknown command "${command}"`);
-} else {
-  console.log(`
-command: ${command}
-params: ${params}
-`);
-  COMMANDS[command](...params);
-}
+app.use(routes);
+
+app.use(serveStatic(__dirname));
+
+app.listen(port, () => console.log(`Server listening on port ${port}`));

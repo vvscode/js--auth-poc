@@ -60,8 +60,4 @@ sh install.sh
 sh start.sh
 ```
 
-## Run commands from `app-client`
-
-1. `cd app-client`
-1. Get jwt with `node index.js fetchJWT`
-1. Run request with `node index.js requestToApiGateway test`
+1. Open `localhost:8084` in browser

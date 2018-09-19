@@ -2,23 +2,23 @@ module.exports = {
   APPS: [
     {
       appId: 'appClient123',
-      callbackUrl: 'http://localhost:1111/secretUrl',
-      scope: ['moi', 'ded', 'api'],
+      callbackUrl: 'http://localhost:8084/api/secretUrl',
+      scope: ['moi', 'ded', 'apiA'],
     },
     {
       appId: 'jt1',
       callbackUrl: 'https://postman-echo.com/post',
-      scope: ['api'],
+      scope: ['apiA'],
     },
     {
       appId: 'jt2',
       callbackUrl: 'https://postman-echo.com/post',
-      scope: ['api1'],
+      scope: ['apiB'],
     },
     {
       appId: 'jt3',
       callbackUrl: 'https://postman-echo.com/post',
-      scope: ['api', 'api1'],
+      scope: ['apiA', 'apiB'],
     },
   ],
 };

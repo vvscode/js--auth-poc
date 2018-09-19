@@ -5,13 +5,13 @@ if (env.error) throw env.error;
 
 const app = express();
 
-app.get('/api', function (req, res) {
+app.get('/apiB', function (req, res) {
   res.json({
     status: "success",
-    data: "data from api"
+    data: "data from apiB"
   });
 });
 
-app.listen(process.env.PORT_API, function () {
-  console.log('API started on port', process.env.PORT_API);
+app.listen(process.env.PORT_API_B, function () {
+  console.log('API1 started on port ', process.env.PORT_API_B);
 });

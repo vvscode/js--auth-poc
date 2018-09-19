@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Auth POC</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+</head>
+<body>
+    <div>
+        <h1 class="text-center mt-3 mb-3">Auth proof of concept</h1>
+        <div class="container">
+            <div class="row">
+                <div class="col-4">
+                    <div class="token-wrapper mt-5 mb-3">
+                        <button type="button" class="btn btn-primary c-get-token">Get Token</button>
+                    </div>
+                    <div class="token-wrapper mb-3">
+                        <button class="btn btn-primary c-call-to-a">Call to microservice A (apiA)</button>
+                        <div class="font-weight-light align-middle">Access to microservice A is <strong class="text-success">allowed</strong></div>
+                    </div>
+                    <div class="token-wrapper mb-3">
+                        <button class="btn btn-primary c-call-to-b">Call to microservice B (apiB)</button>
+                        <div class="font-weight-light align-middle">Access to microservice B is <strong class="text-danger">forbidden</strong></div>
+                    </div>
+                    <div class="token-wrapper mb-3">
+                        <button class="btn btn-secondary c-reset">Reset</button>
+                    </div>
+                </div>
+                <div class="col-8">
+                    <div class="request mb-3">
+                        <h5>Request params:</h5>
+                        <div class="body border bg-light p-3 c-request" style="min-height: 300px"></div>
+                    </div>
+                    <div class="response mb-3">
+                        <h5>Response data:</h5>
+                        <div class="body border bg-light p-3 c-response" style="min-height: 300px"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="public/app.js"></script>
+</body>
+</html>
