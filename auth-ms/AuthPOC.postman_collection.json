@@ -1,0 +1,393 @@
+{
+	"info": {
+		"_postman_id": "460b149e-6a43-5191-674f-258937af23e9",
+		"name": "AuthPOC",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/requestToken",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t \"appId\": \"jt1\"\n}"
+				},
+				"url": {
+					"raw": "{{protocol}}://{{host}}:{{port}}/requestToken",
+					"protocol": "{{protocol}}",
+					"host": [
+						"{{host}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"requestToken"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "/requestToken - ok",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"disabled": false
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t \"appId\": \"jt1\"\n}"
+						},
+						"url": {
+							"raw": "{{protocol}}://{{host}}:{{port}}/requestToken",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"requestToken"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "keep-alive",
+							"name": "Connection",
+							"description": "Options that are desired for the connection"
+						},
+						{
+							"key": "Content-Length",
+							"value": "127",
+							"name": "Content-Length",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 28 Aug 2018 12:32:53 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"7f-F9v0aWO3oQSYUplhfh+6eBKGM4M\"",
+							"name": "ETag",
+							"description": "An identifier for a specific version of a resource, often a message digest"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express",
+							"name": "X-Powered-By",
+							"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+						}
+					],
+					"cookie": [],
+					"body": "{\"status\":\"success\",\"data\":{\"payload\":{\"appId\":\"jt1\",\"scope\":[\"moi\",\"ded\"]},\"message\":\"You've got jwt-token via callback url\"}}"
+				},
+				{
+					"name": "/requestToken - err",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"disabled": false
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t \"appId\": \"jt12\"\n}"
+						},
+						"url": {
+							"raw": "{{protocol}}://{{host}}:{{port}}/requestToken",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"requestToken"
+							]
+						}
+					},
+					"status": "Forbidden",
+					"code": 403,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "keep-alive",
+							"name": "Connection",
+							"description": "Options that are desired for the connection"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1109",
+							"name": "Content-Length",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 28 Aug 2018 12:34:14 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"455-xfc8aMXTm8J5j0eAdVuzJmVjr/0\"",
+							"name": "ETag",
+							"description": "An identifier for a specific version of a resource, often a message digest"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express",
+							"name": "X-Powered-By",
+							"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+						}
+					],
+					"cookie": [],
+					"body": "{\"status\":\"error\",\"message\":\"jt12 appId not registered\",\"error\":\"Error: jt12 appId not registered\\n    at Object.getJWTData (/Users/vvscode/repo/tamm/auth-ms/utils/auth.js:25:11)\\n    at requestToken (/Users/vvscode/repo/tamm/auth-ms/routes/requestToken.js:21:56)\\n    at Layer.handle [as handle_request] (/Users/vvscode/repo/tamm/auth-ms/node_modules/express/lib/router/layer.js:95:5)\\n    at next (/Users/vvscode/repo/tamm/auth-ms/node_modules/express/lib/router/route.js:137:13)\\n    at /Users/vvscode/repo/tamm/auth-ms/node_modules/express-validation/lib/index.js:45:47\\n    at Layer.handle [as handle_request] (/Users/vvscode/repo/tamm/auth-ms/node_modules/express/lib/router/layer.js:95:5)\\n    at next (/Users/vvscode/repo/tamm/auth-ms/node_modules/express/lib/router/route.js:137:13)\\n    at Route.dispatch (/Users/vvscode/repo/tamm/auth-ms/node_modules/express/lib/router/route.js:112:3)\\n    at Layer.handle [as handle_request] (/Users/vvscode/repo/tamm/auth-ms/node_modules/express/lib/router/layer.js:95:5)\\n    at /Users/vvscode/repo/tamm/auth-ms/node_modules/express/lib/router/index.js:281:22\"}"
+				}
+			]
+		},
+		{
+			"name": "/checkJWT",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"jwt\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6Imp0MSIsInNjb3BlIjpbIm1vaSIsImRlZCJdLCJpYXQiOjE1MzU0NTc5MDIsImV4cCI6MTU1MTAwOTkwMn0.7V9L3vKN3r_GcVSaXcIAJYX8o5OFI7vkb-9qUtfs5r8\"\n}"
+				},
+				"url": {
+					"raw": "{{protocol}}://{{host}}:{{port}}/checkJWT",
+					"protocol": "{{protocol}}",
+					"host": [
+						"{{host}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"checkJWT"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "/checkJWT - ok",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"disabled": false
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"jwt\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6Imp0MSIsInNjb3BlIjpbIm1vaSIsImRlZCJdLCJpYXQiOjE1MzU0NTc5MDIsImV4cCI6MTU1MTAwOTkwMn0.7V9L3vKN3r_GcVSaXcIAJYX8o5OFI7vkb-9qUtfs5r8\"\n}"
+						},
+						"url": {
+							"raw": "{{protocol}}://{{host}}:{{port}}/checkJWT",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"checkJWT"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "keep-alive",
+							"name": "Connection",
+							"description": "Options that are desired for the connection"
+						},
+						{
+							"key": "Content-Length",
+							"value": "99",
+							"name": "Content-Length",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 28 Aug 2018 12:33:22 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"63-VOS2uBdINhZYFzCLszWGjb4dEu4\"",
+							"name": "ETag",
+							"description": "An identifier for a specific version of a resource, often a message digest"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express",
+							"name": "X-Powered-By",
+							"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+						}
+					],
+					"cookie": [],
+					"body": "{\"status\":\"success\",\"data\":{\"appId\":\"jt1\",\"scope\":[\"moi\",\"ded\"],\"iat\":1535457902,\"exp\":1551009902}}"
+				},
+				{
+					"name": "/checkJWT - err",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"disabled": false
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"jwt\": \"xyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6Imp0MSIsInNjb3BlIjpbIm1vaSIsImRlZCJdLCJpYXQiOjE1MzU0NTc5MDIsImV4cCI6MTU1MTAwOTkwMn0.7V9L3vKN3r_GcVSaXcIAJYX8o5OFI7vkb-9qUtfs5r8\"\n}"
+						},
+						"url": {
+							"raw": "{{protocol}}://{{host}}:{{port}}/checkJWT",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"checkJWT"
+							]
+						}
+					},
+					"status": "Forbidden",
+					"code": 403,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "keep-alive",
+							"name": "Connection",
+							"description": "Options that are desired for the connection"
+						},
+						{
+							"key": "Content-Length",
+							"value": "107",
+							"name": "Content-Length",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 28 Aug 2018 12:34:39 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"6b-V93lKIU5KRmUlBeXbPppR1C1siM\"",
+							"name": "ETag",
+							"description": "An identifier for a specific version of a resource, often a message digest"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express",
+							"name": "X-Powered-By",
+							"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+						}
+					],
+					"cookie": [],
+					"body": "{\"status\":\"error\",\"message\":\"invalid token\",\"error\":{\"name\":\"JsonWebTokenError\",\"message\":\"invalid token\"}}"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "cca2a870-ffe2-42fd-8e1e-edcf145b6083",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "01540c31-2d91-471c-9280-a8ed514c562a",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "4465cc76-78a0-45ee-b700-e9e6db4cc140",
+			"key": "host",
+			"value": "localhost",
+			"type": "string"
+		},
+		{
+			"id": "6c12ff48-d106-4be9-86bd-b139ba45ee45",
+			"key": "port",
+			"value": "1234",
+			"type": "string"
+		},
+		{
+			"id": "6d6d6718-7486-4dda-afc2-83f42ae4c2bb",
+			"key": "protocol",
+			"value": "http",
+			"type": "string"
+		}
+	]
+}
