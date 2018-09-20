@@ -21,27 +21,29 @@ gateway-->clientApp: information about scope
 # jwt passed to client via callback to hidden url
 authMs->clientApp: jwt
 
-# request with jwt in headers
-note right of clientApp
-    all requests signed
-    with JWT
-end note
-clientApp->*gateway: request with jwt
+loop during application lifecycle
+    # request with jwt in headers
+    note right of clientApp
+        all requests signed
+        with JWT
+    end note
+    clientApp->*gateway: request with jwt
 
-# validation jwt via auth-ms
-note left of gateway
-    gateway validates
-    jwt and scope
-end note
-gateway->*authMs: check jwt validity
-authMs-->gateway: is jwt valid and scope
+    # validation jwt via auth-ms
+    note left of gateway
+        gateway validates
+        jwt and scope
+    end note
+    gateway->*authMs: check jwt validity
+    authMs-->gateway: is jwt valid and scope
 
-# pass request to microservice
-gateway->*microservice: request
-microservice-->gateway: response
+    # pass request to microservice
+    gateway->*microservice: request
+    microservice-->gateway: response
 
-# pass response to client application
-gateway-->clientApp: response from microservice
+    # pass response to client application
+    gateway-->clientApp: response from microservice
+end
 ```
 
 ## Preliminary requirements
@@ -51,6 +53,7 @@ gateway-->clientApp: response from microservice
 ```
 sh install.sh
 ```
+
 1. Start all instances
 
 ```
