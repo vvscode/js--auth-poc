@@ -44,28 +44,17 @@ microservice-->gateway: response
 gateway-->clientApp: response from microservice
 ```
 
-## Prerequirements
+## Preliminary requirements
 
 1. Install dependencies for all projects
-1. Run _auth_
 
 ```
-cd auth
-node index.js
+sh install.sh
 ```
-
-3. Run `gateway`
+1. Start all instances
 
 ```
-cd gateway
-yarn start
-```
-
-4. Run microservice mock
-
-```
-cd api
-node src/bin/www
+sh start.sh
 ```
 
 ## Run commands from `app-client`
