@@ -26,7 +26,7 @@ gateway->*microservice: request
 microservice-->gateway: response
 
 # pass response to client application
-=gateway-->clientApp: response from microservice
+gateway-->clientApp: response from microservice
 ```
 
 ## Prerequirements
