@@ -7,23 +7,26 @@
 ```
 # https://www.websequencediagrams.com/
 
-# client authorization
+# client app authorization
 clientApp->*authMs: request for jwt
 authMs-->clientApp: information about scope
 
-# client request with jwt
+# jwt passed to client via callback to hidden url
+authMs->clientApp: jwt
+
+# request with jwt in headers
 clientApp->*gateway: request with jwt
 
-# check authorization
+# validation jwt via auth-ms
 gateway->*authMs: check jwt validity
 authMs-->gateway: is jwt valid and scope
 
-# request to microservice
+# pass request to microservice
 gateway->*microservice: request
 microservice-->gateway: response
 
-# pass response to client
-gateway-->clientApp: response from microservice
+# pass response to client application
+=gateway-->clientApp: response from microservice
 ```
 
 ## Prerequirements
