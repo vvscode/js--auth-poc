@@ -38,5 +38,4 @@ module.exports = {
   createSuccessResponse,
   createErrorResponse,
   createFailResponse,
-  createErrorResponse,
 };

@@ -1,0 +1,9 @@
+const path = require('path');
+const gateway = require('express-gateway');
+const env = require('dotenv').config();
+
+if (env.error) throw env.error;
+
+gateway()
+  .load(path.resolve(__dirname, '../../config'))
+  .run();

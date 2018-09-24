@@ -1,0 +1,6 @@
+{
+  "description": "Auth Policy",
+  "version": "1.0.0",
+  "main": "manifest.js",
+  "name": "policies"
+}

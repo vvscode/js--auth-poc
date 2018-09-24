@@ -1,0 +1,15 @@
+{
+  "description": "TAMM API Gateway",
+  "repository": {},
+  "license": "UNLICENSED",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "node ./src/bin/www"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "dotenv": "^6.0.0",
+    "express-gateway": "^1.11.0",
+    "policies": "file:./policies"
+  }
+}

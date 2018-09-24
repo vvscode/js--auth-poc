@@ -1,0 +1,7 @@
+db:
+  redis:
+    emulate: true
+    namespace: TAMM
+plugins:
+  auth:
+    package: policies

@@ -1,0 +1,22 @@
+http:
+  port: ${PORT:-8080}
+apiEndpoints:
+  api:
+    host: localhost
+serviceEndpoints:
+  api:
+    url: 'http://localhost:${PORT_API:-8081}'
+policies:
+  - auth
+  - proxy
+pipelines:
+  api:
+    apiEndpoints:
+      - api
+    policies:
+      - auth:
+        - action:
+            service: 'api'
+      - proxy:
+        - action:
+            serviceEndpoint: api
