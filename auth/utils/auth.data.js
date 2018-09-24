@@ -3,7 +3,7 @@ module.exports = {
     {
       appId: 'appClient123',
       callbackUrl: 'http://localhost:1111/secretUrl',
-      scope: ['moi', 'ded'],
+      scope: ['moi', 'ded', 'api'],
     },
     {
       appId: 'jt1',

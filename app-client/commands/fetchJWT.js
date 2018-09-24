@@ -3,7 +3,7 @@ const http = require('http');
 
 const APP_PORT = 1111;
 const appId = 'appClient123';
-const authMsUrl = 'http://0.0.0.0:1234';
+const authMsUrl = 'http://0.0.0.0:8082';
 
 module.exports = (...params) => {
   Promise.all([
